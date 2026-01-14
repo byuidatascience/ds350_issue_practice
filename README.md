@@ -12,20 +12,12 @@ This repository contains Quarto files with R code for visualizing the iris datas
 
 ## Purpose
 
-The Quarto files in each folder contain **intentional errors** in the R code. Students are expected to:
+The Quarto files in each folder contain **intentional errors** in the R code. The main purpose of this assignment however it to practice using issues, and less about debugging the code, so don't worry if the errors have all already been found. You can suggest other things in the issue, or simply repeat pointing out the error others may have already identified. 
 
-1. Review the code in the Quarto files
-2. Identify errors (syntax errors, typos, logical errors, etc.)
+Students are expected to:
+
 3. Create GitHub issues to report the errors they find
-4. Practice proper issue reporting and documentation
-
-## Types of Errors Included
-
-The files contain various types of errors such as:
-- Missing punctuation (commas, quotes, parentheses)
-- Typos in variable/column names
-- Incorrect function arguments
-- Logical errors (wrong values, incorrect scale limits)
-
-Students should carefully examine the code and report any issues they discover.
+4. Label the issue according to who their instructor is
+5. Assign the issue to their instructor and to themselves
+6. The instructor or TA will respond to the issue with a comment, and probably close the issue
 

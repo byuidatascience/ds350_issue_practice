@@ -16,8 +16,8 @@ The Quarto files in each folder contain **intentional errors** in the R code. Th
 
 Students are expected to:
 
-3. Create GitHub issues to report the errors they find
-4. Label the issue according to who their instructor is
-5. Assign the issue to their instructor and to themselves
-6. The instructor or TA will respond to the issue with a comment, and probably close the issue
+1. Create GitHub issues to report the errors they find
+2. Label the issue according to who their instructor is
+3. Assign the issue to their instructor and to themselves
+4. The instructor or TA will respond to the issue with a comment, and probably close the issue
 

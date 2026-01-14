@@ -1,0 +1,62 @@
+---
+title: "Iris Data Analysis"
+author: "Cannon Spring 2026"
+format: html
+---
+
+## Overview
+
+This analysis explores the iris dataset using various visualizations.
+
+```{r}
+#| label: load-libraries
+
+library(ggplot2)
+library(dplyr)
+```
+
+## Histogram
+
+Visualizing the distribution of sepal lengths:
+
+```{r}
+#| label: histogram
+
+ggplot(iris, aes(x = Sepal.Length, fill = Species)) +
+  geom_histogram(binwidth = 0.5, position = "dodge") +
+  labs(title = "Distribution of Sepal Length",
+       x = "Sepal Length",
+       y = "Frequency") +
+  theme_bw() +
+  scale_x_continuous(limits = c(0, 100))
+```
+
+## Violin Plot
+
+Comparing petal widths across species:
+
+```{r}
+#| label: violin-plot
+
+ggplot(iris, aes(x = Species, y = Petal.Width, fill = Species)) +
+  geom_violin() +
+  labs(title = "Petal Width Distribution by Species",
+       x = "Species"
+       y = "Petal Width (cm)") +
+  theme_classic()
+```
+
+## Data Summary
+
+```{r}
+#| label: data-summary
+
+iris %>%
+  group_by(Species) %>%
+  summarize(
+    mean_sepal_length = mean(Sepal.Length),
+    mean_petal_length = mean(Petal.Length),
+    max_petal_width = max(Petal.Widht),
+    count = n()
+  )
+```

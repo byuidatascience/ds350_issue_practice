@@ -1,0 +1,72 @@
+---
+title: "Iris Dataset Plots"
+author: "Ball Spring 2026"
+format: html
+---
+
+## Introduction
+
+Exploring the iris dataset with ggplot2 visualizations.
+
+```{r}
+#| label: setup
+
+library(ggplot2)
+```
+
+## Scatter Plot with Regression Line
+
+```{r}
+#| label: scatter-regression
+
+ggplot(iris, aes(x = Petal.Length, y = Petal.Width, color = Species)) +
+  geom_point(size = 3) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Petal Dimensions Relationship",
+       x = "Petal Length (cm),
+       y = "Petal Width (cm)") +
+  theme_minimal()
+```
+
+## Density Plot
+
+```{r}
+#| label: density-plot
+
+ggplot(iris, aes(x = Sepal.Width, fill = Species)) +
+  geom_density(alpha = 0.6) +
+  labs(title = "Sepal Width Density by Species",
+       x = "Sepal Width (cm)",
+       y = "Density") +
+  theme_light() +
+  scale_fill_brewer(palette = "Set10")
+```
+
+## Faceted Scatter Plots
+
+```{r}
+#| label: faceted-plots
+
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point() +
+  facet_wrap(~ Species) +
+  labs(title = "Sepal Dimensions by Species",
+       x = "Sepal Length (cm)",
+       y = "Sepal Width (cm)") +
+  theme_bw()
+```
+
+## Statistical Summary
+
+```{r}
+#| label: stats
+
+# Calculate correlation
+cor(iris$Petal.Length, iris$Petal.Width)
+
+# Display structure
+str(iris)
+
+# Calculate variance
+var(iris$Sepal.Lenght)
+```

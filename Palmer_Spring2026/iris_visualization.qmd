@@ -1,0 +1,60 @@
+---
+title: "Iris Dataset Visualization"
+author: "Palmer Spring 2026"
+format: html
+---
+
+## Introduction
+
+This document visualizes the famous iris dataset using ggplot2.
+
+```{r}
+#| label: setup
+#| include: false
+
+library(ggplot2)
+```
+
+## Scatter Plot
+
+Let's create a scatter plot of sepal length vs sepal width:
+
+```{r}
+#| label: scatter-plot
+
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point() +
+  labs(title = "Iris Sepal Dimensions",
+       x = "Sepal Length (cm)",
+       y = "Sepal Width (cm)") +
+  theme_minimal()
+```
+
+## Box Plot
+
+Here's a box plot showing petal length distribution by species:
+
+```{r}
+#| label: box-plot
+
+ggplot(iris, aes(x = Species, y = Petal.Length, fill = Species)) +
+  geom_boxplot() +
+  labs(title = "Petal Length by Species",
+       x = "Species",
+       y = "Petal Length cm") +
+  theme_minimal() +
+  scale_fill_manual(values = c("red", "blue"))
+```
+
+## Summary Statistics
+
+Let's calculate some summary statistics:
+
+```{r}
+#| label: summary
+
+summary(iris$Sepal.Length)
+mean(iris$Petal.Width)
+sd(iris$Petal.Lenght)
+median(iris$Sepal.Widht)
+```
